@@ -130,3 +130,9 @@ sysinfo.txt
 crashlytics-build.properties
 
 Roulette/.DS_Store
+Roulette/Logs
+Roulette/Packages
+Roulette/Roulette_IOS
+Roulette/Roulette_IOS_BurstDebugInformation_DoNotShip
+Roulette/Library
+Roulette/obj
