@@ -36,5 +36,11 @@ public class PlayerController : MonoBehaviour
         {
             this.rigi2D.AddForce(transform.right * key * this.walkForce);
         }
+
+        // 움직이는 방향에 따라 반전
+        if (key != 0)
+        {
+            transform.localScale = new Vector3(key, 1, 1);
+        }
     }
 }
