@@ -7,9 +7,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigi2D;
     // 점프하는 힘
     float jumpForce = 680.0f;
-    //
+    // 움직이는 힘
     float walkForce = 30.0f;
-    //
+    // 움직이는 힘의 최대값
     float maxWalkSpeed = 2.0f;
     void Start()
     {
@@ -29,10 +29,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow)) key = -1;
 
         // 플레이어 속도 계산
-        float speeds = Mathf.Abs(this.rigi2D.velocity.x);
+        float speedx = Mathf.Abs(this.rigi2D.velocity.x);
 
         // 스피드 제한
-        if (speeds < this.maxWalkSpeed)
+        if (speedx < this.maxWalkSpeed)
         {
             this.rigi2D.AddForce(transform.right * key * this.walkForce);
         }
