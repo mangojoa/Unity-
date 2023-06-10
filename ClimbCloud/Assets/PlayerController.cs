@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -49,5 +50,12 @@ public class PlayerController : MonoBehaviour
 
         // 플레이어 속도에 맞춰 애니메이션 속도를 조절
         this.animator.speed = speedx / 2.0f;
+    }
+
+    // 골 도착
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("골");
+        SceneManager.LoadScene("ClearScene");
     }
 }
