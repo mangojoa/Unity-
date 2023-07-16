@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && this.rigi2D.velocity.y == 0)
         {
+            this.animator.SetTrigger("JumpTrigger");
             this.rigi2D.AddForce(transform.up * this.jumpForce);
         }
 
@@ -49,7 +50,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // 플레이어 속도에 맞춰 애니메이션 속도를 조절
-        this.animator.speed = speedx / 2.0f;
+        if (this.rigi2D.velocity.y == 0)
+        {
+            this.animator.speed = speedx / 2.0f;
+        } else
+        {
+            this.animator.speed = 1.0f;
+        }
 
         // 플레이어가 화면 밖으로 나갔다면 처음부
         if (transform.position.y < -10)
